@@ -1,0 +1,69 @@
+[
+    {
+        "id": 1,
+        "nombre": "Miguel",
+        "apellido": "Garabito",
+        "correo": "garabito.miguel@hotmail.com",
+        "contactos": [
+            {
+                "id": 1,
+                "personaID": 1,
+                "numeroTelefonico": "8092310111"
+            },
+            {
+                "id": 2,
+                "personaID": 1,
+                "numeroTelefonico": "8298400063"
+            },
+            {
+                "id": 3,
+                "personaID": 1,
+                "numeroTelefonico": "8095554444"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "nombre": "Lorayne",
+        "apellido": "Martinez",
+        "correo": "martinez.lorayne@hotmail.com",
+        "contactos": [
+            {
+                "id": 4,
+                "personaID": 2,
+                "numeroTelefonico": "8095554444"
+            },
+            {
+                "id": 5,
+                "personaID": 2,
+                "numeroTelefonico": "8097776666"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "nombre": "Jhaymi",
+        "apellido": "Garabito Baez",
+        "correo": "garabito.baez@gmail.com",
+        "contactos": [
+            {
+                "id": 7,
+                "personaID": 4,
+                "numeroTelefonico": "8092315544"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "nombre": "Luis",
+        "apellido": "Perez",
+        "correo": "perez@gmail.com",
+        "contactos": [
+            {
+                "id": 8,
+                "personaID": 5,
+                "numeroTelefonico": "8294586987"
+            }
+        ]
+    }
+]

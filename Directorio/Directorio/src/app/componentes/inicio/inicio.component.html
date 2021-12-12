@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-8 text-center">
+    
+            <div>
+                <h1><i class="fas fa-address-book"></i> Directorio Telefonico</h1>
+            </div>
+            
+            <div *ngIf='!directorio'>
+                <h2>No hay Regristros en el directorio</h2>
+            </div>
+    
+            <div *ngIf='directorio'>
+                <table class="table table-hover table-bordered table-sm">
+                    <thead class="fondo">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo</th>
+                            <th>Contactos</th>
+                            <th>Actualizar</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor='let registro of directorio'>
+                        <tr>
+                            <td class="text-capitalize">{{registro.nombre}}</td>
+                            <td class="text-capitalize">{{registro.apellido}}</td>
+                            <td>{{registro.correo}}</td>
+                            <td>
+                                <tr *ngFor='let contacto of registro.contactos'>
+                                    <td class="no-bordes">{{contacto.numeroTelefonico}}</td>
+                                </tr>
+                            </td>
+                            <td>
+                                <a routerLink='../actualizar/{{registro.id}}'><i class="far fa-edit icono-actualizar"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+            <button class="btn btn-primary btn-lg crear" routerLink='../crear' (click)="enviarIDs()"><i class="fas fa-plus"></i> Agregar un nuevo Registro</button>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+
+
+

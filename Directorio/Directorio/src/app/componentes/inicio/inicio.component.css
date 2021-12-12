@@ -1,0 +1,27 @@
+button.crear {
+    text-decoration: none;
+    color: black;
+}
+
+button.crear:hover{
+    color:rgba(0, 0, 0, 0.575);
+}
+
+i.icono-actualizar {
+    font-size: 30px;
+    color: orange;
+}
+
+i.icono-actualizar:hover {
+    font-size: 25px;
+    color: rgba(255, 166, 0, 0.623);
+}
+
+td.no-bordes {
+    border: 0;
+}
+
+thead.fondo{
+    background-color: black;
+    color: white;
+}

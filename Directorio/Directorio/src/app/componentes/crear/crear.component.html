@@ -1,0 +1,93 @@
+
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <h2>Formulario de Registro</h2>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+
+<br />
+
+<form [formGroup]='formulario' (ngSubmit)='CrearRegistro()'>
+
+    <div class="form-row">
+
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+        <div class="form-group col-sm-4">
+            <label for="nombre" class="form-label">Nombre: </label>
+            <input type="text" id='nombre' formControlName='nombre' maxlength="20" class="form-control" required>
+        </div>
+        <div class="form-group col-sm-4">
+            <label for="nombre" class="form-label">Apellido: </label>
+            <input type="text" id='apellido' formControlName='apellido' maxlength="20" class="form-control" required>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+    </div>
+    <div class="form-row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+
+        <div class="form-group col-sm-8">
+            <label for="nombre" class="form-label">Correo: </label>
+            <input type="text" id='correo' formControlName='correo' maxlength="30" class="form-control" required>
+        </div>
+
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+    </div>
+
+    <div formArrayName='contactos'>
+        <div *ngFor='let contacto of contactos.controls; let i=index'>
+            <div [formGroupName]='i'>
+                <div class="form-row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-1"></div>
+
+                    <div class="form-group col-sm-8"> 
+                        <label for="contacto-{{i}}" class="form-label">Numero {{i+1}}: </label>
+                        <input type="number" formControlName='numero' maxlength="15" class="form-control">                   
+                    </div>
+
+                    <div class="col-sm-1">
+                        <button class="btn btn-danger icono" (click)='EliminarControlDeContacto(i)'><i class="fas fa-trash icono-borrar"></i></button>
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+            </div>
+        </div>   
+    </div>
+
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-8">
+            <button type="submit" class="btn btn-success btn-block" [disabled]="!formulario.valid" ><i class="fas fa-user-plus "></i> Insertar</button>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+    </div>
+    
+</form>
+
+<div class="row separar">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-8">
+        <button (click)='AgregarControlDeContacto()' class="btn btn-primary btn-block">Agregar Numero <i class="fas fa-mobile-alt"></i></button>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-1"></div>
+</div>
+
+<div class="row separar">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-8">
+        <button (click)='RegresarAlInicio()' class="btn btn-warning btn-block"> <i class="fas fa-arrow-left"></i> Regresar</button>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-1"></div>
+</div>
